@@ -5,7 +5,7 @@ use owo_colors::OwoColorize;
 use tokio::io::AsyncWriteExt;
 use tokio_stream::StreamExt;
 
-/// Simple program to greet a person
+/// Jeeves, your personal AI helper in the terminal
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 struct Args {
@@ -21,9 +21,9 @@ async fn main() -> Result<()> {
     let args = Args::parse();
 
     // For custom values:
-    let ollama = Ollama::new("Your IP".to_string(), 11434);
+    let ollama = Ollama::new("Your Ollama Server Address".to_string(), 11434);
 
-    let model = "Your model name".to_string();
+    let model = "Your AI Model Name".to_string();
 
     let prompt = args.question;
 

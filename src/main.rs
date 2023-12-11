@@ -42,7 +42,7 @@ enum AIModel {
 impl AIModel {
     fn as_str(&self) -> &'static str {
         match self {
-            AIModel::DeepSeekCoder => "deepseek-coder",
+            AIModel::DeepSeekCoder => "deepseek-coder:6.7b-instruct-q4_0",
             AIModel::OpenHermes25Mistral => "openhermes2.5-mistral",
             AIModel::StableLmZephyr => "stablelm-zephyr",
         }
@@ -52,7 +52,7 @@ impl AIModel {
 // Function to parse the AI model name
 fn parse_ai_model(model: &str) -> Result<AIModel> {
     match model {
-        "deepseek-coder" => Ok(AIModel::DeepSeekCoder),
+        "deepseek-coder:6.7b-instruct-q4_0" => Ok(AIModel::DeepSeekCoder),
         "openhermes2.5-mistral" => Ok(AIModel::OpenHermes25Mistral),
         "stablelm-zephyr" => Ok(AIModel::StableLmZephyr),
         _ => Err(anyhow!("Invalid AI model: {}", model)),
